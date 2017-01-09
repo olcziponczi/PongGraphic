@@ -16,5 +16,13 @@ public:
 	Font font;
 	Text text;
 	
+	void startMenu();
+	void startGame();
+	void gameOver();
+	void endGame();
+private:
+	int i=0;
+	
+	
 };
 
