@@ -12,7 +12,6 @@ menu::menu() {
 
 		if (Keyboard::isKeyPressed(Keyboard::Up)) {
 			i++;
-			text.setFillColor(sf::Color::White);
 		}
 		if (Keyboard::isKeyPressed(Keyboard::Return)) {
 
@@ -21,13 +20,13 @@ menu::menu() {
 
 			case 0:
 				startMenu();
-				
+				//getch();
 			case 1:
 				startGame();
-				
+				//getch();
 			case 2:
 				gameOver();
-				
+				//getch();
 			case 3:
 				endGame();
 				break;
@@ -58,6 +57,12 @@ menu::menu() {
 		}
 		state = END;
 	}
+}
+
+void menu::createMenu() {
+
+
+
 }
 
 void menu::startMenu() {
