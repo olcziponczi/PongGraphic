@@ -7,7 +7,7 @@ Bat2::Bat2(float startX, float startY)
 	position2.x = startX;
 	position2.y = startY;
 
-	batShape2.setSize(sf::Vector2f(5, 50));
+	batShape2.setSize(sf::Vector2f(10, 100));
 	batShape2.setPosition(position2);
 }
 

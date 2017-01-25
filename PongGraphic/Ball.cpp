@@ -2,12 +2,15 @@
 #include "Ball.h"
 #include <iostream>
 
+
 Ball::Ball(float startX, float startY){
 	position.x = startX;
 	position.y = startY;
 
-	ballShape.setSize(sf::Vector2f(10, 10));
+	ballShape.setSize(sf::Vector2f(15, 15));
 	ballShape.setPosition(position);
+
+	this->player.playMusic();
 }
 
 FloatRect Ball::getPosition(){
@@ -23,12 +26,18 @@ float Ball::getXVelocity(){
 }
 
 void Ball::reboundSides(){
+	
+
 	yVelocity = -yVelocity;
+	this->player.playFart();
+		
 }
 
 void Ball::reboundBat(){
 	position.x -= (xVelocity * 30);
 	xVelocity = -xVelocity;
+	this->player.playFart();
+
 }
 
 void Ball::hitBottom(){
@@ -56,7 +65,6 @@ void Ball::restartBall() {
 
 void Ball::addPointA() {
 	lives++;
-	lives2--;
 	
 }
 void Ball::showPointsA() {
@@ -68,6 +76,5 @@ void Ball::showPointsB() {
 }
 void Ball::addPointB() {
 	lives2++;
-	lives--;
 
 }

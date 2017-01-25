@@ -1,13 +1,15 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-
+#include <SFML/Audio.hpp>
+#include "soundPlayer.h"
 using namespace sf;
 
 class Ball{
 
 private:
-	Vector2f position;
 
+	Vector2f position;
+	soundPlayer player = soundPlayer();
 	// A RectangleShape object called ref
 	RectangleShape ballShape;
 
@@ -44,7 +46,9 @@ public:
 
 	void addPointB();
 
-	int lives = 3;
+	int lives = 0;
 	
-	int lives2 = 3;
+	int lives2 = 0;
+
+	int maxPoints = 10;
 };

@@ -1,5 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+
 
 using namespace sf;
 
@@ -7,8 +9,7 @@ class Bat
 {
 private:
 	Vector2f position;
-
-	// A RectangleShape object
+	
 	RectangleShape batShape;
 
 	float batSpeed = .3f;
@@ -26,4 +27,7 @@ public:
 
 	void update();
 
+	// load something into the sound buffer...
+
+	
 };

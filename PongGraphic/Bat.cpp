@@ -1,13 +1,12 @@
 #include "stdafx.h"
 #include "Bat.h"
 
-// This the constructor and it is called when we create an object
 Bat::Bat(float startX, float startY)
 {
 	position.x = startX;
 	position.y = startY;
 
-	batShape.setSize(sf::Vector2f(5, 50));
+	batShape.setSize(sf::Vector2f(10, 100));
 	batShape.setPosition(position);
 }
 
