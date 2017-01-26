@@ -26,140 +26,137 @@ using namespace sf;
 		return pos;
 	}
 
-	menu::menu() {
-}
 
 
-void menu::createMenu() {
+	void menu::createMenu() {
 
-	/*sf::SoundBuffer buffer;
-	buffer.loadFromFile("pong2.wav");
-	sf::Sound sound;
-	sound.setBuffer(buffer);
-	sound.play();
-	*/
-	RenderWindow window(VideoMode(windowWidth, windowHeight), "Pong");
-	Event event;
-	while (true)
-	{
-
-
-		while (window.pollEvent(event)) {
-
-			if (event.type == Event::Closed)	//spr. czy ktoœ nie zamkn¹³ okna
-				window.close();
-
-			Font font;
-			font.loadFromFile("font.ttf");
-			Text play, history, quit, title;
-
-			title.setFont(font);
-			play.setFont(font);
-			history.setFont(font);
-			quit.setFont(font);
-	
-			stringstream draw;
-			
-			title.setCharacterSize(180);
-			play.setCharacterSize(150);
-			history.setCharacterSize(150);
-			quit.setCharacterSize(150);
-	
-			title.setFillColor(sf::Color::White);
-			play.setFillColor(sf::Color::White);
-			history.setFillColor(sf::Color::White);
-			quit.setFillColor(sf::Color::White);
+		/*sf::SoundBuffer buffer;
+		buffer.loadFromFile("pong2.wav");
+		sf::Sound sound;
+		sound.setBuffer(buffer);
+		sound.play();
+		*/
+		RenderWindow window(VideoMode(windowWidth, windowHeight), "Pong");
+		Event event;
+		while (true)
+		{
 
 
-			std::stringstream ss;
-			//std::stringstream ss1;
-			std::stringstream ss2;
-			std::stringstream ss3;
+			while (window.pollEvent(event)) {
 
-			ss3 << "PONG v2";
-			ss << "START";
-			//ss1 << "HISTORY";
-			ss2 << "EXIT";
-
-			int coordStartY = 150;
-
-			Vector2f coordTitle = Vector2f(windowWidth - 600, coordStartY-150);
-			Vector2f coordStart = Vector2f(windowWidth - 600, coordStartY);
-			//Vector2f coordHistory = Vector2f(windowWidth - 600, coordStartY + 100);
-			Vector2f coordQuit = Vector2f(windowWidth - 600, coordStartY + 100);
-
-
-			title.setPosition(coordTitle);
-			title.setString(ss3.str());
-
-			play.setPosition(coordStart);
-			play.setString(ss.str());
-
-			//history.setPosition(coordHistory);
-			//history.setString(ss1.str());
-
-			quit.setPosition(coordQuit);
-			quit.setString(ss2.str());
-
-			window.clear(Color(0, 0, 0, 0));
-
-			switch (currentPosition)
-			{
-			case START:
-				play.setOutlineThickness(10);
-				play.setOutlineColor(Color::Magenta);
-				if (event.type == Event::KeyReleased && event.key.code == Keyboard::Return) {
-
-					createGame();
-				}
-				break;
-			/*case HISTORY:
-				history.setOutlineThickness(10);
-				history.setOutlineColor(Color::Magenta);
-				if (event.type == Event::KeyReleased && event.key.code == Keyboard::Return) {
-
-					showHistory();
-				}
-
-				
-				break;
-				*/
-			case QUIT:
-				quit.setOutlineThickness(10);
-				quit.setOutlineColor(Color::Magenta);
-
-				if (event.type == Event::KeyReleased && event.key.code == Keyboard::Return) {
+				if (event.type == Event::Closed)	//spr. czy ktoœ nie zamkn¹³ okna
 					window.close();
-			
+
+				Font font;
+				font.loadFromFile("font.ttf");
+				Text play, history, quit, title;
+
+				title.setFont(font);
+				play.setFont(font);
+				history.setFont(font);
+				quit.setFont(font);
+
+				stringstream draw;
+
+				title.setCharacterSize(180);
+				play.setCharacterSize(150);
+				history.setCharacterSize(150);
+				quit.setCharacterSize(150);
+
+				title.setFillColor(sf::Color::White);
+				play.setFillColor(sf::Color::White);
+				history.setFillColor(sf::Color::White);
+				quit.setFillColor(sf::Color::White);
+
+
+				std::stringstream ss;
+				//std::stringstream ss1;
+				std::stringstream ss2;
+				std::stringstream ss3;
+
+				ss3 << "PONG v2";
+				ss << "START";
+				//ss1 << "HISTORY";
+				ss2 << "EXIT";
+
+				int coordStartY = 150;
+
+				Vector2f coordTitle = Vector2f(windowWidth - 600, coordStartY - 150);
+				Vector2f coordStart = Vector2f(windowWidth - 600, coordStartY);
+				//Vector2f coordHistory = Vector2f(windowWidth - 600, coordStartY + 100);
+				Vector2f coordQuit = Vector2f(windowWidth - 600, coordStartY + 100);
+
+
+				title.setPosition(coordTitle);
+				title.setString(ss3.str());
+
+				play.setPosition(coordStart);
+				play.setString(ss.str());
+
+				//history.setPosition(coordHistory);
+				//history.setString(ss1.str());
+
+				quit.setPosition(coordQuit);
+				quit.setString(ss2.str());
+
+				window.clear(Color(0, 0, 0, 0));
+
+				switch (currentPosition)
+				{
+				case START:
+					play.setOutlineThickness(10);
+					play.setOutlineColor(Color::Magenta);
+					if (event.type == Event::KeyReleased && event.key.code == Keyboard::Return) {
+
+						createGame();
+					}
+					break;
+					/*case HISTORY:
+						history.setOutlineThickness(10);
+						history.setOutlineColor(Color::Magenta);
+						if (event.type == Event::KeyReleased && event.key.code == Keyboard::Return) {
+
+							showHistory();
+						}
+
+
+						break;
+						*/
+				case QUIT:
+					quit.setOutlineThickness(10);
+					quit.setOutlineColor(Color::Magenta);
+
+					if (event.type == Event::KeyReleased && event.key.code == Keyboard::Return) {
+						window.close();
+
+					}
+					break;
+				}
+
+
+				if (event.type == Event::KeyReleased && event.key.code == Keyboard::Down) {
+
+					++currentPosition;
 
 				}
-				break;
+				if (event.type == Event::KeyReleased  && event.key.code == Keyboard::Up) {
+
+					--currentPosition;
+				}
+
+				window.draw(title);
+				window.draw(play);
+				//window.draw(history);
+				window.draw(quit);
+				window.display();
 			}
-			
-
-			if (event.type == Event::KeyReleased && event.key.code == Keyboard::Down) {
-
-				++currentPosition;
-
-			}
-			if (event.type == Event::KeyReleased  && event.key.code == Keyboard::Up) {
-
-				--currentPosition;
-			}
-
-			window.draw(title);
-			window.draw(play);
-			//window.draw(history);
-			window.draw(quit);
-			window.display();
 		}
 	}
-}
+
 
 
 
 void menu::createGame() {
-
 
 	RenderWindow window(VideoMode(windowWidth, windowHeight), "Pong");
 
@@ -209,10 +206,10 @@ void menu::createGame() {
 		else if (Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
 			window.close();
 		}
-	
+
 
 		if (ball.getPosition().top > windowHeight) {
-	
+
 			ball.reboundSides();
 		}
 
@@ -222,7 +219,7 @@ void menu::createGame() {
 			ball.reboundSides();
 		}
 
-	
+
 
 		if (ball.getPosition().left < 0 || ball.getPosition().left + 10 > windowWidth) {
 
@@ -250,15 +247,14 @@ void menu::createGame() {
 
 		std::stringstream ss;
 		std::stringstream ss1;
+
 		ss << "Points: " << ball.lives;
 		ss1 << "Points: " << ball.lives2;
 		Vector2f coord = Vector2f(windowWidth - 1000, 10);
 		Vector2f coord2 = Vector2f(windowWidth - 150, 10);
+		Vector2f coordPoints = Vector2f(windowWidth - 9500, windowHeight - 400);
 
 
-		if (ball.lives == 10 || ball.lives2 == 10) {
-			endGame();
-		}
 
 		hud.setPosition(coord);
 		hud.setString(ss.str());
@@ -278,21 +274,93 @@ void menu::createGame() {
 		window.draw(hud);
 		window.draw(hud1);
 		window.display();
-	}}
+
+		Text points;
+		std::stringstream p;
+		points.setFont(font);
+		points.setCharacterSize(100);
+		points.setFillColor(sf::Color::White);
+
+		
+
+		if (ball.lives == 10 || ball.lives2 == 10) {
+
+			if (ball.lives > ball.lives2) {
+
+				p << "AND THE WINNER IS...PLAYER A, WITH: " << ball.lives << " POINTS";
+				points.setString(p.str());
+			//	window.clear();
+				points.setPosition(coordPoints);
+				window.draw(points);
+				window.display();
+				window.waitEvent(event);
+
+			}
+			else {
+				p << "AND THE WINNER IS...PLAYER B, WITH: " << ball.lives2 << " POINTS";
+				points.setString(p.str());
+				//window.clear();
+				points.setPosition(coordPoints);
+				window.draw(points);
+				window.display();
+				window.waitEvent(event);
+			}
 
 
-void menu::endGame() {
+			//window.close();
 
-	Vector2f coordText = Vector2f(windowWidth - 1000, 10);
-	std::stringstream p;
-	points.setPosition(coordText);
-	points.setString(p.str());
-	if(ball.lives>ball.lives2){
-	p <<"AND THE WINNER IS..." 
 		}
-	window.draw(points);
-
+	}
 }
+		
+			
+		
+	
+
+
+
+
+/*
+void menu::endGame() {
+	RenderWindow window(VideoMode(windowWidth, windowHeight), "Pong");
+	stringstream draw;
+	Text points;
+	Ball ball(windowWidth / 2, 1);
+	//Event event;
+
+	Vector2f coordText = Vector2f(windowWidth - 600, windowHeight);
+	Font font;
+
+	font.loadFromFile("font.ttf");
+
+	points.setFont(font);
+
+	points.setCharacterSize(100);
+	points.setFillColor(sf::Color::White);
+
+	std::stringstream p;
+
+	if (ball.lives > ball.lives2) {
+
+			p << "AND THE WINNER IS...PLAYER A, WITH: " << ball.lives << "POINTS";
+			points.setString(p.str());
+			window.draw(points);
+			window.display();
+
+		}else
+			p << "AND THE WINNER IS...PLAYER B, WITH: " << ball.lives2 << "POINTS";
+			points.setString(p.str());
+			window.draw(points);
+			window.display();
+
+		}
+
+*/
+	
+		
+	
+
+
 /*void menu::createHistory() {
 
 	std::fstream plik;

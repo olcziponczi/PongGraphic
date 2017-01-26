@@ -46,9 +46,9 @@ public:
 
 	void addPointB();
 
-	int lives = 0;
+	int lives = 8;
 	
-	int lives2 = 0;
+	int lives2 = 8;
 
 	int maxPoints = 10;
 };
