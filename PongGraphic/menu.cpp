@@ -252,7 +252,7 @@ void menu::createGame() {
 		ss1 << "Points: " << ball.lives2;
 		Vector2f coord = Vector2f(windowWidth - 1000, 10);
 		Vector2f coord2 = Vector2f(windowWidth - 150, 10);
-		Vector2f coordPoints = Vector2f(windowWidth - 9500, windowHeight - 400);
+		Vector2f coordPoints = Vector2f(windowWidth - 970, windowHeight - 500);
 
 
 
