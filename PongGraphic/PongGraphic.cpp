@@ -18,7 +18,6 @@ int main() {
 	menu game;
 	game.createMenu();
 	
-		
 	return 0;
 }
 

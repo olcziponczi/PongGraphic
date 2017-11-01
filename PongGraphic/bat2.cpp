@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "Bat2.h"
 
-// This the constructor and it is called when we create an object
 Bat2::Bat2(float startX, float startY)
 {
 	position2.x = startX;

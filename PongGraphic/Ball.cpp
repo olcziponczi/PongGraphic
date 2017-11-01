@@ -25,19 +25,16 @@ float Ball::getXVelocity(){
 	return xVelocity;
 }
 
-void Ball::reboundSides(){
+void Ball::reboundSides(){		//odbicie od krawêdzi
 	
-
 	yVelocity = -yVelocity;
 	this->player.playFart();
-		
 }
 
-void Ball::reboundBat(){
+void Ball::reboundBat(){			//odbicie od paletki
 	position.x -= (xVelocity * 30);
 	xVelocity = -xVelocity;
 	this->player.playFart();
-
 }
 
 void Ball::hitBottom(){
@@ -50,15 +47,12 @@ void Ball::hitTop() {
  }
 
 void Ball::update(){
-	// Update the ball position variables
-	position.y += yVelocity;
+	position.y += yVelocity;		//aktualizacja pozycji
 	position.x += xVelocity;
-
-	// Move the ball and the bat
-	ballShape.setPosition(position);
+	ballShape.setPosition(position);	//poruszanie siê pi³ki
 }
 
-void Ball::restartBall() {
+void Ball::restartBall() {				//pocz¹tkowe coordy pi³ki
 	position.y = 380;
 	position.x = 500;
 }

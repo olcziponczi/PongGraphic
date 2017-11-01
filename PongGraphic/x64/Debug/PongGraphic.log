@@ -1,0 +1,19 @@
+﻿  stdafx.cpp
+  soundPlayer.cpp
+  PongGraphic.cpp
+  menu.cpp
+c:\users\aleksandra\downloads\ponggraphic-20171101t213427z-001\ponggraphic\ponggraphic\menu.cpp(78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aleksandra\downloads\ponggraphic-20171101t213427z-001\ponggraphic\ponggraphic\menu.cpp(79): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aleksandra\downloads\ponggraphic-20171101t213427z-001\ponggraphic\ponggraphic\menu.cpp(81): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aleksandra\downloads\ponggraphic-20171101t213427z-001\ponggraphic\ponggraphic\menu.cpp(157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aleksandra\downloads\ponggraphic-20171101t213427z-001\ponggraphic\ponggraphic\menu.cpp(158): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aleksandra\downloads\ponggraphic-20171101t213427z-001\ponggraphic\ponggraphic\menu.cpp(160): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aleksandra\downloads\ponggraphic-20171101t213427z-001\ponggraphic\ponggraphic\menu.cpp(247): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aleksandra\downloads\ponggraphic-20171101t213427z-001\ponggraphic\ponggraphic\menu.cpp(248): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\aleksandra\downloads\ponggraphic-20171101t213427z-001\ponggraphic\ponggraphic\menu.cpp(249): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  bat2.cpp
+  Bat.cpp
+  Ball.cpp
+  Generating Code...
+  PongGraphic.vcxproj -> C:\Users\Aleksandra\Downloads\PongGraphic-20171101T213427Z-001\PongGraphic\x64\Debug\PongGraphic.exe
+  PongGraphic.vcxproj -> C:\Users\Aleksandra\Downloads\PongGraphic-20171101T213427Z-001\PongGraphic\x64\Debug\PongGraphic.pdb (Full PDB)

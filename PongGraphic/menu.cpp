@@ -30,12 +30,6 @@ using namespace sf;
 
 	void menu::createMenu() {
 
-		/*sf::SoundBuffer buffer;
-		buffer.loadFromFile("pong2.wav");
-		sf::Sound sound;
-		sound.setBuffer(buffer);
-		sound.play();
-		*/
 		RenderWindow window(VideoMode(windowWidth, windowHeight), "Pong");
 		Event event;
 		while (true)
@@ -132,14 +126,14 @@ using namespace sf;
 					}
 					break;
 				}
+				//event.type == Event::KeyReleased &&
 
-
-				if (event.type == Event::KeyReleased && event.key.code == Keyboard::Down) {
+				if (event.key.code == Keyboard::Down) {
 
 					++currentPosition;
 
 				}
-				if (event.type == Event::KeyReleased  && event.key.code == Keyboard::Up) {
+				if (event.key.code == Keyboard::Up) {
 
 					--currentPosition;
 				}
@@ -253,16 +247,12 @@ void menu::createGame() {
 		Vector2f coord = Vector2f(windowWidth - 1000, 10);
 		Vector2f coord2 = Vector2f(windowWidth - 150, 10);
 		Vector2f coordPoints = Vector2f(windowWidth - 970, windowHeight - 500);
-
-
-
+				
 		hud.setPosition(coord);
 		hud.setString(ss.str());
 		hud1.setPosition(coord2);
 		hud1.setString(ss1.str());
-
-
-
+		
 		window.clear(Color(0, 0, 0, 0));
 
 
@@ -283,7 +273,7 @@ void menu::createGame() {
 
 		
 
-		if (ball.lives == 10 || ball.lives2 == 10) {
+		if (ball.lives == ball.maxPoints || ball.lives2 == ball.maxPoints) {
 
 			if (ball.lives > ball.lives2) {
 
